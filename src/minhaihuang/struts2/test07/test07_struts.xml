@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="test07" namespace="/test07" extends="struts-default">
+	<!-- 定义拦截器 -->
+		<interceptors>
+			<interceptor name="IpInterceptor" class="minhaihuang.struts2.test07.IpInterceptor"/>
+			<!-- 定义拦截器栈-->
+			<interceptor-stack name="myInterceptorStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="IpInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+	
+		<action name="IpAction"
+			class="minhaihuang.struts2.test07.IpAction">
+			<!-- 使用拦截器 -->
+			<interceptor-ref name="myInterceptorStack"/>
+
+			<result name="success" type="dispatcher">
+				/test07/success.jsp
+			</result>
+			
+			<result name="error" type="dispatcher">
+				/test07/error.jsp
+			</result>
+		</action>
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>

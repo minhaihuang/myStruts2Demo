@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="test04" namespace="/test04" extends="struts-default">   
+        <action name="*_add" class="minhaihuang.struts2.test04.{1}" method="add">
+           	<result name="add">
+           		/test04/{1}_add.jsp
+           	</result>
+        </action>
+        
+        <!-- 第二种情况 -->
+        <action name="UserActionAction_*" class="minhaihuang.struts2.test04.UserAction" method="{1}">
+           	<result name="{1}">
+           		/test04/UserActionAction_{1}.jsp
+           	</result>
+        </action>
+        
+         <!-- 第三种情况 -->
+        <action name="*_*" class="minhaihuang.struts2.test04.{1}" method="{2}">
+           	<result name="{2}">
+           		/test04/{1}_{2}.jsp
+           	</result>
+        </action>
+        
+         <!-- 第四种情况，动态方法的调用 -->
+        <action name="UserAction" class="minhaihuang.struts2.test04.UserAction" >
+           	<result name="add">
+           		/test04/UserAction_add.jsp
+           	</result>
+        </action>
+    </package>
+
+
+    <!-- Add packages here -->
+
+</struts>

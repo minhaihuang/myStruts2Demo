@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="test08_validator" namespace="/test08_validator" extends="struts-default">
+
+		<action name="RegisterStudentAction"
+			class="minhaihuang.struts2.test08_validator.RegisterStudentAction" method="register">
+			
+			<result name="success" type="dispatcher">
+				/test08_validator/success.jsp
+			</result>
+			
+			<result name="input" type="dispatcher">
+				/test08_validator/RegisterStudent.jsp
+			</result>
+		</action>
+		
+		<action name="RegisterStudentXMLAction"
+			class="minhaihuang.struts2.test08_validator.RegisterStudentXMLAction">
+			
+			<result name="success" type="dispatcher">
+				/test08_validator/success.jsp
+			</result>
+			
+			<result name="input" type="dispatcher">
+				/test08_validator/RegisterStudentXML.jsp
+			</result>
+		</action>
+		
+		<action name="IDAction"
+			class="minhaihuang.struts2.test08_validator.IDAction">
+			
+			<result name="registerSuccess" type="dispatcher">
+				/test08_validator/registerSuccess.jsp
+			</result>
+			
+			<result name="input" type="dispatcher">
+				/test08_validator/RegisterUser.jsp
+			</result>
+		</action>
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>

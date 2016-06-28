@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="resultType" namespace="/resultType" extends="struts-default">
+	
+		<global-results >
+			<result name="globalResultSuccess" type="dispatcher">
+			/resultType/disPatcherSuccess.jsp
+			</result>
+		</global-results>
+		
+		<action name="ResultTypeAction"
+			class="minhaihuang.struts2.hhm01.resultType.ResultTypeAction">
+			<result name="disPatcherSuccess" type="dispatcher">
+				/resultType/disPatcherSuccess.jsp
+			</result>
+
+			<result name="redirectSuccess" type="redirect">
+				/resultType/redirectSuccess.jsp
+			</result>
+
+			<result name="actionRedirectSuccess" type="redirectAction">
+				<param name="actionName">StudentAction.action</param>
+				<param name="namespace">/test01</param>
+			</result>
+		</action>
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>

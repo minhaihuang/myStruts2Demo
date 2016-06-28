@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//OpenSymphony Group//XWork Validator Config 1.0//EN"
+  		"http://www.opensymphony.com/xwork/xwork-validator-config-1.0.dtd">
+<!-- 注册自定义的数据校验器 -->
+<validators>
+	<validator name="myValidator" class="minhaihuang.struts2.validator.MyValidator" />
+	<validator name="idValidator" class="minhaihuang.struts2.test08_validator.IDValidator" />
+
+</validators>

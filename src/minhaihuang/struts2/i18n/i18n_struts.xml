@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 防止表单重复提交 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="i18n" namespace="/i18n" extends="struts-default">
+		<action name="LoginAction" class="minhaihuang.struts2.interceptor.LoginAction">
+			<result name="loginSuccess" type="dispatcher">
+				/i18n/loginSuccess.jsp
+			</result>
+		</action>
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>

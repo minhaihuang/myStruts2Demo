@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="wildcard" namespace="/wildcard" extends="struts-default">   
+        <action name="*_add" class="minhaihuang.struts2.wildcard.{1}" method="add">
+           	<result name="add">
+           		/wildcard/{1}_add.jsp
+           	</result>
+        </action>
+        
+        <!-- 第二种情况 -->
+        <action name="CustomerAction_*" class="minhaihuang.struts2.wildcard.CustomerAction" method="{1}">
+           	<result name="delete">
+           		/wildcard/index.jsp
+           	</result>
+        </action>
+        
+         <!-- 第三种情况 -->
+        <action name="*_*" class="minhaihuang.struts2.wildcard.{1}" method="{2}">
+           	<result name="{2}">
+           		/wildcard/{1}_{2}.jsp
+           	</result>
+        </action>
+        
+         <!-- 第四种情况，动态方法的调用 -->
+        <action name="*" class="minhaihuang.struts2.wildcard.{1}" >
+           	<result name="add">
+           		/wildcard/{1}_add.jsp
+           	</result>
+        </action>
+    </package>
+
+
+    <!-- Add packages here -->
+
+</struts>

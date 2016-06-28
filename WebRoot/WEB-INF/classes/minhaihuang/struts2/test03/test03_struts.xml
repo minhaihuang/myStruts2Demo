@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="test03" namespace="/test03" extends="struts-default">
+		<global-results>
+			<result name="globalSuccess" type="dispatcher">
+				/test03/success.jsp
+			</result>
+		</global-results>
+		
+		<action name="FinishAction" class="minhaihuang.struts2.test03.FinishAction">
+			<result name="dispatcherSuccess" type="dispatcher">
+				/test03/addStudent.jsp
+			</result>
+		</action>
+
+		<action name="AddStudentAction" class="minhaihuang.struts2.test03.AddStudentAction">
+			<result name="dispatcherSuccess" type="dispatcher">
+				/test03/addStudent.jsp
+			</result>
+		</action>
+
+		<action name="LoginAction" class="minhaihuang.struts2.test03.LoginAction">
+			<result name="redirectSuccess" type="redirect">
+				/test03/login.jsp
+			</result>
+		</action>
+
+		<action name="TempAction" class="minhaihuang.struts2.test03.TempAction">
+			<result name="redirectActionSuccess" type="redirectAction">
+				<param name="actionName">AddSchoolAction.action</param>
+				<param name="namespace">/domain</param>
+			</result>
+		</action>
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>

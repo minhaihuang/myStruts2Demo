@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.custom.i18n.resources"   value="fileUploadResource"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+
+	<include file="minhaihuang/struts2/test01/test01_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test02/test02_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test03/test03_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test04/test04_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test05/test05_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test06/test06_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test07/test07_struts.xml/"></include>
+	<include file="minhaihuang/struts2/i18n/i18n_struts.xml/"></include>
+	<include file="minhaihuang/struts2/test08_validator/test08_validator_struts.xml/"></include>
+	<include file="minhaihuang/struts2/domain/domain_struts.xml/"></include>
+	<include file="minhaihuang/struts2/interceptor/interceptor_struts.xml/"></include>
+	<include file="minhaihuang/struts2/validator/validator_struts.xml/"></include>
+	<include file="minhaihuang/struts2/interceptorToken/interceptorToken_struts.xml/"></include>
+	<include file="minhaihuang/struts2/fileUpload/fileUpload_struts.xml/"></include>
+	<include file="minhaihuang/struts2/convert/convert_struts.xml/"></include>
+	<include file="minhaihuang/struts2/wildcard/wildcard_struts.xml/"></include>
+	<include file="minhaihuang/struts2/servletDecouple/servletDecouple_struts.xml/"></include>
+	<include file="minhaihuang/struts2/hhm01/resultType/resultType_struts.xml/"></include>
+	<include file="minhaihuang/struts2/ognl/ognl_struts.xml/"></include>
+	<include file="minhaihuang/struts2/ui/ui_struts.xml/"></include>
+	<include file="minhaihuang/struts2/modelDriven/modelDriven_struts.xml/"></include>
+
+    <!-- Add packages here -->
+
+</struts>

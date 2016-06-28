@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 防止表单重复提交 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="interceptor" namespace="/interceptor" extends="struts-default">
+	<!-- 注册拦截器 -->
+	<interceptors>
+		<interceptor name="AuthorityInterceptor" class="minhaihuang.struts2.interceptor.AuthorityInterceptor"/>
+		<!-- 拦截器栈 -->
+		<interceptor-stack name="myInterceptorStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="AuthorityInterceptor"></interceptor-ref>
+		</interceptor-stack>
+	</interceptors>
+	
+		<action name="StudentAction_*"
+			class="minhaihuang.struts2.interceptor.StudentAction" method="{1}">
+			<!-- 使用拦截器 -->
+			<interceptor-ref name="myInterceptorStack"/>
+			<result name="{1}" type="dispatcher">
+				/interceptor/studentSystem.jsp
+			</result>
+			
+			<result name="login" type="dispatcher">
+				/interceptor/login.jsp
+			</result>
+		</action>
+		
+		<action name="LoginAction" class="minhaihuang.struts2.interceptor.LoginAction">
+			<result name="loginSuccess" type="dispatcher">
+				/interceptor/loginSuccess.jsp
+			</result>
+		</action>
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>
